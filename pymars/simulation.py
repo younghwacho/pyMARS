@@ -64,8 +64,10 @@ class Simulation(object):
             self.gas.set_equivalence_ratio(
                 self.properties.equivalence_ratio,
                 self.properties.fuel,
-                self.properties.oxidizer
+                self.properties.oxidizer,
+                basis=self.properties.composition_type
                 )
+
         else:
             if self.properties.composition_type == 'mole':
                 self.gas.TPX = (

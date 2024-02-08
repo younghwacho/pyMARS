@@ -403,9 +403,6 @@ def parse_ignition_inputs(model, conditions, phase_name=''):
         
         composition_type = case.get('composition-type', 'mole')
         assert composition_type in ['mole', 'mass'], pre + 'composition-type must be "mole" or "mass"'
-        assert not (composition_type == 'mass' and equiv_ratio), (
-            pre + 'composition-type: must be mole when specifying equivalence ratio'
-            )
         
         inputs.append(InputIgnition(
             kind, temperature, pressure, end_time, max_steps,
